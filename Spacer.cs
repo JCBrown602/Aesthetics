@@ -1,8 +1,12 @@
-﻿/***********************************************************************
- * Spacer.cs
- * 
- * 15 AUG 2017 ~ Jason C. Brown
- ***********************************************************************/ 
+﻿/************************************************************************
+ * PROJECT      : Aesthetics
+ * FILE         : Spacer.cs
+ * AUTHOR       : Jason Brown (https://github.com/JCBrown602)
+ * FRAMEWORK    : 4.5
+ * DATE         : 10/9/2018 5:56:26 PM (Originally:15 AUG 2017)
+ * DESCRIPTION  :
+ * LINK(S)      :
+ ************************************************************************/ 
 using System;
 
 namespace Aesthetics
@@ -15,7 +19,7 @@ namespace Aesthetics
         #endregion
 
         #region Constructors
-        // Chaining these just for learning purposes
+        // Chaining these for learning purposes
         public Spacer(char char1, int int1)
         {
             this.Char    = char1;
