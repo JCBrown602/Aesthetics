@@ -3,47 +3,34 @@
  * FILE         : Spacer.cs
  * AUTHOR       : Jason Brown (https://github.com/JCBrown602)
  * FRAMEWORK    : 4.5
- * DATE         : 10/9/2018 5:56:26 PM (Originally:15 AUG 2017)
- * DESCRIPTION  :
+ * DATE         : 10/9/2018 5:56:26 PM
+ * DESCRIPTION  : 
  * LINK(S)      :
- ************************************************************************/ 
+ ************************************************************************/
 using System;
 
 namespace Aesthetics
 {
-    public class Spacer
+    /// <summary>
+    /// 
+    /// </summary>
+    public class Spacer : Display
     {
-        #region Properties
-        //private char _char   = '*';
-        //private int _numChar = 75;
-        #endregion
-
-        #region Constructors
-        // Chaining these for learning purposes
-        public Spacer(char char1, int int1)
+        public Spacer(int value)
+            : base(value)
         {
-            this.Char    = char1;
-            this.NumChar = int1;
+            Console.WriteLine("> Calling Disp constructor...");
         }
-        public Spacer(char char1) : this(char1, 75) { }
-        public Spacer() : this('*') { }
-
-        public Spacer(int rndInt)
+        public static void ShowSpacer(Spacer s)
         {
-            this.NumChar = 75;
-            this.Char    = (char)rndInt; // This makes ASCII chars...
-#if SPACER
-            Console.WriteLine("\t>> CTOR: Spacer(int rndInt) <<");
-#endif
+            for (int i = 0; i < s.NumChar; i++)
+                Console.Write(s.Char);
+            Console.WriteLine();
         }
-        #endregion
-
-        #region Getters & Setters
-        public char Char { get; set; }
-        public int NumChar { get; set; }
-        //public char Char { get => _char; set => _char = value; } = '*';
-        //public int NumChar { get => _numChar; set => _numChar = value; } = 50;
-        #endregion
+        public void SanityCheck()
+        {
+            Console.WriteLine("> Sanity check.");
+        }
 
         #region Methods
         public void DisplayHeader(string title)
@@ -176,22 +163,5 @@ namespace Aesthetics
         #endregion
     }
 
-    #region EXPERIMENTAL / LEARNING / TESTING
-    /* Experimenting with inheritance... 
-     * Shelving this for now to get on with ADNS and FileIO */
-    public class Disp : Spacer
-    {
-        public Disp(int value)
-            : base(value)
-        {
-            Console.WriteLine("> Calling Disp constructor...");
-        }
-        public static void ShowSpacer(Spacer s)
-        {
-            for (int i = 0; i < s.NumChar; i++)
-                Console.Write(s.Char);
-            Console.WriteLine();
-        }
-    }
-    #endregion
+ 
 }

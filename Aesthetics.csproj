@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Display.cs" />
     <Compile Include="Header.cs" />
     <Compile Include="Spacer.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -51,6 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Yootheme-Halloween-Cheshire-cat.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
