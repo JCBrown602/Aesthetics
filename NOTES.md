@@ -1,28 +1,29 @@
-#C# Notes (Solution:Aesthetics)
-##UML
-###Visibility:
-- private
+# C# Notes (Solution:Aesthetics)
+## UML
+### Visibility:
+* \- private
 cannot be accessed by any other class or subclass
-+ public
+* \+ public
 opposite: can be accessed by anything
-# protected
+* \# protected
 can only be accessed by the same class or subclasses
-~ package/default
-can be used by any other class, as long as itís in the same package
+* \~ package/default
+can be used by any other class, as long as it‚Äôs in the same package
 
-###Abstract classes
-names in italics
-you donít instantiate abs classes
-you donít make an ìanimalî
-you make ìottersî, ìtortoisesî, and ìslow lorisesî
+### Abstract classes
+* names in italics
+* you don‚Äôt instantiate abs classes
+* you don‚Äôt make an ‚Äúanimal‚Äù
+* you make ‚Äúotters‚Äù, ‚Äútortoises‚Äù, and ‚Äúslow lorises‚Äù
 
-###Relationships
-inheritances
-association
-ìotterî animal ---> eats ---> ìsea urchinî animal
+### Relationships
+* inheritances
+* association
+* ‚Äúotter‚Äù animal ---> eats ---> ‚Äúsea urchin‚Äù animal
 
-##Fields vs. Properties ([link to StackOverflow](https://stackoverflow.com/questions/295104/what-is-the-difference-between-a-field-and-a-property))
-'''public class MyClass
+## Fields vs. Properties ([link to StackOverflow](https://stackoverflow.com/questions/295104/what-is-the-difference-between-a-field-and-a-property))
+
+``` public class MyClass
 {
     // this is a field.  It is private to your class and stores the actual data.
     private string _myField;
@@ -44,5 +45,5 @@ association
     // This is an AutoProperty (C# 3.0 and higher) - which is a shorthand syntax
     // used to generate a private field for you
     public int AnotherProperty{get;set;} 
-}'''
+} ```
 x
