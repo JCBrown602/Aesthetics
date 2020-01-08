@@ -46,4 +46,34 @@ can be used by any other class, as long as it’s in the same package
     // used to generate a private field for you
     public int AnotherProperty{get;set;} 
 } ```
+
+## Too many constructors?
+```
+        /* https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/params
+         * Searching for a way to combine ShowSpacer() into one method. The following method
+         * doesn't work since it would require many IF statements to determine the types.
+         * It may still prove useful in this project. */
+        public static void UseParams2(params object[] list)
+        {
+            for (int i = 0; i < list.Length; i++)
+            {
+                Console.Write(list[i] + " ");
+            }
+            Console.WriteLine();
+        }
+```
+
+## Class Sketch
+# Spacer
+* int numChars
+* char spacerChar
+* object[] spacer
+
+* (GetSpecs() - to let user define spacer properties)
+* BuildSpacer
+* ShowSpacer()
+
+# Header : Spacer
+* string title
+* string tagLine
 x

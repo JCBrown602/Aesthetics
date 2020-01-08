@@ -1,6 +1,6 @@
 ﻿/************************************************************************
  * PROJECT      : Aesthetics
- * FILE         : Header
+ * FILE         : Header.cs
  * AUTHOR       : Jason Brown (https://github.com/JCBrown602)
  * FRAMEWORK    : 4.5
  * DATE         : 10/9/2018 5:56:26 PM
@@ -31,6 +31,8 @@ namespace Aesthetics
             this.Title = title;
             this.TagLine = tagLine;
             this.Symbol = aChar;
+
+            Console.WriteLine(">> Header CTOR.");
         }
         public Header(string title, string tagLine)
         {
@@ -68,10 +70,10 @@ namespace Aesthetics
             char aChar = Symbol;
 
             Console.Clear();
-            Console.Title = this.Title;
+            Console.Title = title;
             Console.ForegroundColor = ConsoleColor.Green;
             Spacer sp = new Spacer(aChar, Console.WindowWidth);
-
+            
             sp.ShowSpacer();
             Console.SetCursorPosition((width - title.Length) / 2, Console.CursorTop);
             Console.ForegroundColor = ConsoleColor.White;

@@ -14,23 +14,39 @@ namespace Aesthetics
     /// <summary>
     /// 
     /// </summary>
-    public class Spacer : Display
+    public class Spacer
     {
-        public Spacer(int value)
-            : base(value)
+        #region Constructors
+        // Chaining these for learning purposes
+        public Spacer(char char1, int int1)
         {
-            Console.WriteLine("> Calling Disp constructor...");
+            this.Char = char1;
+            this.NumChar = int1;
+            // DEBUG:
+            Console.WriteLine(">> Spacer CTOR.");
         }
-        public static void ShowSpacer(Spacer s)
+
+        public Spacer(char char1) : this(char1, 75) { }
+
+        public Spacer() : this('*') { }
+
+        public Spacer(int rndInt)
         {
-            for (int i = 0; i < s.NumChar; i++)
-                Console.Write(s.Char);
-            Console.WriteLine();
+            this.NumChar = 75;
+            this.Char = (char)rndInt; // This makes ASCII chars...
+#if SPACERTEST
+            Console.WriteLine("\t>> CTOR: Spacer(int rndInt) <<");
+#endif
         }
-        public void SanityCheck()
-        {
-            Console.WriteLine("> Sanity check.");
-        }
+        #endregion
+
+        #region Getters & Setters
+        public char Char { get; set; }
+        public int NumChar { get; set; }
+        public int IsHeader { get; set; }
+        //public char Char { get => _char; set => _char = value; } = '*';
+        //public int NumChar { get => _numChar; set => _numChar = value; } = 50;
+        #endregion
 
         #region Methods
         public void DisplayHeader(string title)
@@ -38,7 +54,8 @@ namespace Aesthetics
             int width = Console.WindowWidth;
             Console.Title = title;
             Console.ForegroundColor = ConsoleColor.Green;
-            Spacer sp = new Spacer((char)22, Console.WindowWidth);
+            Spacer sp = new Spacer('x', 127);
+            //Spacer sp = new Spacer((char)22, Console.WindowWidth);
             string tagLine = ">>> ALL HAIL THE HYPNO TOAD! <<<";
 
             sp.ShowSpacer();
@@ -73,8 +90,9 @@ namespace Aesthetics
             {
                 Console.Write(this.Char);
             }
+            //Console.WriteLine();
+            CurPos();
         }
-
         public void ShowSpacer(char c)
         {
             this.Char = c;
@@ -82,8 +100,9 @@ namespace Aesthetics
             {
                 Console.Write(this.Char);
             }
+            //Console.WriteLine();
+            CurPos();
         }
-
         public void ShowSpacer(char c, int num)
         {
             this.Char = c;
@@ -92,8 +111,9 @@ namespace Aesthetics
             {
                 Console.Write(this.Char);
             }
+            //Console.WriteLine();
+            CurPos();
         }
-
         public void ShowSpacer(char c, bool full)
         {
             this.Char = c;
@@ -102,8 +122,26 @@ namespace Aesthetics
             {
                 Console.Write(this.Char);
             }
+            //Console.WriteLine();
+            CurPos();
         }
 
+        public static void ShowSpacer(Spacer s)
+        {
+            for (int i = 0; i < s.NumChar; i++)
+                Console.Write(s.Char);
+            //Console.WriteLine();
+            CurPos();
+        }
+
+        public static void CurPos()
+        {
+            //Console.SetCursorPosition(Console.CursorLeft, 0);
+            
+            //Console.WriteLine();
+        }
+#if DEBUG
+        // Reference for selecting characters to use as spacer chars
         public void AvailableChars()
         {
             Console.Write("Decimal".PadRight(10));
@@ -160,7 +198,8 @@ namespace Aesthetics
                 Console.WriteLine();
             }
         }
-        #endregion
+#endif
+#endregion
     }
 
  
